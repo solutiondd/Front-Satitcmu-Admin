@@ -28,9 +28,7 @@ jobs:
       - name: Create production env file
         shell: bash
         run: |
-          cat <<EOF > .env
-          ${{ secrets.ENV }}
-          EOF
+          printf '%s\n' "${{ secrets.ENV }}" > .env
 
       - name: Build and push image
         uses: docker/build-push-action@v6
