@@ -72,8 +72,8 @@ function getUtilityBgColor(className) {
 function getThemeColors() {
     const primary = getUtilityBgColor('bg-primary')
     const primaryLight = getUtilityBgColor('bg-primary/70')
-    const secondary = getUtilityBgColor('bg-secondary')
-    const secondaryLight = getUtilityBgColor('bg-secondary/70')
+    const secondary = getUtilityBgColor('bg-purple-400')
+    const secondaryLight = getUtilityBgColor('bg-purple-400/70')
     return { primary, primaryLight, secondary, secondaryLight }
 }
 
@@ -277,7 +277,7 @@ function buildBarChart(start, end) {
                 ctx.restore()
 
                 ctx.save()
-                ctx.strokeStyle = '#fefce8'
+                ctx.strokeStyle = '#faeeff'
                 ctx.lineWidth = 2.5
                 ctx.beginPath()
                 ctx.rect(

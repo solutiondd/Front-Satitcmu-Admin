@@ -10,7 +10,7 @@
     ]">
 
         <button @click="toggleSidebar"
-            class="absolute -right-3 top-6 bg-secondary text-secondary-content rounded-full p-1.5 shadow-lg hover:scale-110 transition-transform z-10 max-[944px]:hidden">
+            class="absolute -right-3 top-6 bg-primary text-primary-content rounded-full p-1.5 shadow-lg hover:scale-110 transition-transform z-10 max-[944px]:hidden">
             <svg xmlns="http://www.w3.org/2000/svg"
                 :class="['h-4 w-4 transition-transform', isExpanded ? '' : 'rotate-180']" fill="none"
                 viewBox="0 0 24 24" stroke="currentColor">
@@ -21,12 +21,11 @@
         <div class="p-4 border-b overflow-hidden bg-gradient-to-r from-primary/5 to-secondary/5">
             <div class="flex items-center gap-2">
                 <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
-                    <img src="/src/assets/Chakkam_Khanathon_School_logo.png" alt="CKK Logo"
-                        class="w-full h-full object-contain" />
+                    <img src="/src/assets/SatitCMU.png" alt="Satit CMU Logo" class="w-full h-full object-contain" />
                 </div>
                 <div v-show="isExpanded" class="transition-opacity duration-300">
-                    <h2 class="text-lg font-bold text-primary whitespace-nowrap">โรงเรียนจักรคำคณาทร</h2>
-                    <p class="text-sm text-secondary font-medium whitespace-nowrap">จังหวัดลำพูน</p>
+                    <h2 class="text-xs font-bold text-primary whitespace-nowrap">โรงเรียนสาธิตมหาวิทยาลัยเชียงใหม่</h2>
+                    <p class="text-xs text-purple-600 font-medium whitespace-nowrap">จังหวัดเชียงใหม่</p>
                 </div>
             </div>
         </div>
@@ -76,7 +75,7 @@
                     <ul v-show="isExpanded && isPersonnelOpen" class="ml-4 mt-2 space-y-2">
                         <li v-if="auth.user?.role !== 'teacher' && auth.user?.role !== 'discipline'">
                             <router-link to="/home/teacher"
-                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-warning/20 transition-colors"
+                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-purple-200 transition-colors"
                                 :class="submenuClass('/home/teacher')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -89,7 +88,7 @@
 
                         <li>
                             <router-link to="/home/student"
-                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-warning/20 transition-colors"
+                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-purple-200 transition-colors"
                                 :class="submenuClass('/home/student')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -127,7 +126,7 @@
                     <ul v-show="isExpanded && isStructureOpen" class="ml-4 mt-2 space-y-2">
                         <li>
                             <router-link to="/home/department"
-                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-warning/20 transition-colors"
+                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-purple-200 transition-colors"
                                 :class="submenuClass('/home/department')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -140,7 +139,7 @@
 
                         <li>
                             <router-link to="/home/position"
-                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-warning/20 transition-colors"
+                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-purple-200 transition-colors"
                                 :class="submenuClass('/home/position')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -153,7 +152,7 @@
 
                         <li>
                             <router-link to="/home/classroom"
-                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-warning/20 transition-colors"
+                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-purple-200 transition-colors"
                                 :class="submenuClass('/home/classroom')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -165,7 +164,7 @@
                         </li>
                         <li>
                             <router-link to="/home/holidays"
-                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-warning/20 transition-colors"
+                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-purple-200 transition-colors"
                                 :class="submenuClass('/home/holidays')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -177,7 +176,7 @@
                         </li>
                         <li>
                             <router-link to="/home/academiccalendar"
-                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-warning/20 transition-colors"
+                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-purple-200 transition-colors"
                                 :class="submenuClass('/home/academiccalendar')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -214,7 +213,7 @@
                     <ul v-show="isExpanded && isBehaviorMenuOpen" class="ml-4 mt-2 space-y-2">
                         <li v-if="auth.user?.role !== 'teacher'">
                             <router-link to="/home/behavior"
-                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-warning/20 transition-colors"
+                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-purple-200 transition-colors"
                                 :class="submenuClass('/home/behavior')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -226,7 +225,7 @@
                         </li>
                         <li>
                             <router-link to="/home/conduct"
-                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-warning/20 transition-colors"
+                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-purple-200 transition-colors"
                                 :class="submenuClass('/home/conduct')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -240,7 +239,7 @@
                         </li>
                         <!-- <li v-if="auth.user?.role !== 'teacher'">
                             <router-link to="/home/leave"
-                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-warning/20 transition-colors"
+                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-purple-200 transition-colors"
                                 :class="submenuClass('/home/leave')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -252,7 +251,7 @@
                         </li> -->
                         <li>
                             <router-link to="/home/checkname"
-                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-warning/20 transition-colors"
+                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-purple-200 transition-colors"
                                 :class="submenuClass('/home/checkname')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -264,7 +263,7 @@
                         </li>
                         <li v-if="featureFlags.menu.enableUniformInspection">
                             <router-link to="/home/uniform-inspection"
-                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-warning/20 transition-colors"
+                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-purple-200 transition-colors"
                                 :class="submenuClass('/home/uniform-inspection')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -302,7 +301,7 @@
                     <ul v-show="isExpanded && isEquipmentOpen" class="ml-4 mt-2 space-y-2">
                         <li>
                             <router-link to="/home/device"
-                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-warning/20 transition-colors"
+                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-purple-200 transition-colors"
                                 :class="submenuClass('/home/device')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -315,7 +314,7 @@
 
                         <li>
                             <router-link to="/home/model"
-                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-warning/20 transition-colors"
+                                class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-purple-200 transition-colors"
                                 :class="submenuClass('/home/model')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -353,7 +352,7 @@
                     <ul v-show="isExpanded && isReportOpen" class="ml-4 mt-2 space-y-2">
                         <li>
                             <router-link to="/home/report"
-                                class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-warning/20 transition-colors text-sm"
+                                class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-purple-200 transition-colors text-sm"
                                 :class="submenuClass('/home/report')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -365,7 +364,7 @@
                         </li>
                         <li>
                             <router-link to="/home/report/late"
-                                class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-warning/20 transition-colors text-sm"
+                                class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-purple-200 transition-colors text-sm"
                                 :class="submenuClass('/home/report/late')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -377,7 +376,7 @@
                         </li>
                         <li>
                             <router-link to="/home/report/leave"
-                                class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-warning/20 transition-colors text-sm"
+                                class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-purple-200 transition-colors text-sm"
                                 :class="submenuClass('/home/report/leave')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -389,7 +388,7 @@
                         </li>
                         <li>
                             <router-link to="/home/report/activity"
-                                class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-warning/20 transition-colors text-sm"
+                                class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-purple-200 transition-colors text-sm"
                                 :class="submenuClass('/home/report/activity')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -401,7 +400,7 @@
                         </li>
                         <li>
                             <router-link to="/home/report/missed"
-                                class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-warning/20 transition-colors text-sm"
+                                class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-purple-200 transition-colors text-sm"
                                 :class="submenuClass('/home/report/missed')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -413,7 +412,7 @@
                         </li>
                         <li v-if="auth.user?.role !== 'teacher'">
                             <router-link to="/home/report/stranger"
-                                class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-warning/20 transition-colors text-sm"
+                                class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-purple-200 transition-colors text-sm"
                                 :class="submenuClass('/home/report/stranger')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -426,7 +425,7 @@
                         </li>
                         <li v-if="featureFlags.menu.enableReportUniformInspection">
                             <router-link to="/home/report/uniform-inspection"
-                                class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-warning/20 transition-colors text-sm"
+                                class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-purple-200 transition-colors text-sm"
                                 :class="submenuClass('/home/report/uniform-inspection')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -438,7 +437,7 @@
                         </li>
                         <li>
                             <router-link to="/home/report/at-risk"
-                                class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-warning/20 transition-colors text-sm"
+                                class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-purple-200 transition-colors text-sm"
                                 :class="submenuClass('/home/report/at-risk')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -450,7 +449,7 @@
                         </li>
                         <li>
                             <router-link to="/home/report/stats"
-                                class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-warning/20 transition-colors text-sm"
+                                class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-purple-200 transition-colors text-sm"
                                 :class="submenuClass('/home/report/stats')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -524,7 +523,7 @@ const isReportActive = computed(() => {
 })
 
 const submenuClass = (path) => {
-    return isActive(path) ? 'bg-warning text-warning-content' : ''
+    return isActive(path) ? 'bg-gray-200 text-warning-content' : ''
 }
 
 const toggleSidebar = () => {

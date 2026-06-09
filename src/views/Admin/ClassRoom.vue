@@ -23,7 +23,7 @@
                     <button v-for="grade in availableGrades" :key="grade.value" @click="selectedGrade = grade.value"
                         :class="[
                             'btn btn-sm',
-                            selectedGrade === grade.value ? 'btn-secondary' : 'btn-ghost'
+                            selectedGrade === grade.value ? 'btn-primary' : 'btn-ghost'
                         ]">
                         <span class="xl:hidden">{{ grade.compactLabel }}</span>
                         <span class="hidden xl:inline">{{ grade.fullLabel }}</span>

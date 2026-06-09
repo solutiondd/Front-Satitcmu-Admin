@@ -230,7 +230,7 @@ const fetchTeachers = async () => {
                 rfid: teacher.rfid,
                 department: teacher.department || '-',
                 position: teacher.position || '-',
-                email: teacher.userid + '@ckk.ac.th',
+                email: teacher.userid + '@satitcmu.ac.th',
                 phone: teacher.phone || '-',
                 picture: teacher.picture ? imageBaseUrl + teacher.picture : '',
                 has_password: teacher.has_password

@@ -5,11 +5,11 @@
                 <div class="card-body p-4 sm:p-6">
                     <div class="flex flex-col items-center mb-4 animate-logo">
                         <img :src="logoUrl" alt="Chakkam Khanathon School Logo" class="school-logo mb-2" />
-                        <h2 class="school-title text-blue-900 font-bold text-xl sm:text-2xl text-center drop-shadow">
-                            โรงเรียนจักรคำคณาทร
+                        <h2 class="school-title text-blue-900 font-bold text-lg sm:text-xl text-center drop-shadow">
+                            โรงเรียนสาธิตมหาวิทยาลัยเชียงใหม่
                         </h2>
-                        <div class="text-blue-900 font-medium text-base sm:text-lg text-center drop-shadow mb-1">
-                            จังหวัดลำพูน
+                        <div class="text-purple-600 font-medium text-base sm:text-lg text-center drop-shadow mb-1">
+                            จังหวัดเชียงใหม่
                         </div>
                     </div>
 
@@ -58,7 +58,7 @@
                                 <span v-else>เข้าสู่ระบบ</span>
                             </button>
                             <button v-if="deferredPrompt" type="button"
-                                class="btn btn-circle btn-accent min-w-[44px] w-11 h-11 sm:min-w-[48px] sm:w-12 sm:h-12"
+                                class="btn btn-circle install-btn min-w-[44px] w-11 h-11 sm:min-w-[48px] sm:w-12 sm:h-12"
                                 @click="installPWA" :title="'ติดตั้งแอป'">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor" class="w-5 h-5 sm:w-6 sm:h-6 mx-auto">
@@ -83,7 +83,7 @@ import { useRouter } from 'vue-router'
 import axios from 'axios'
 import { useAuthStore } from '../stores/auth'
 import { UserService } from '../api/User.js'
-import logoUrl from '../assets/Chakkam_Khanathon_School_logo.png'
+import logoUrl from '../assets/SatitCMU.png'
 import CryptoJS from '../utils/crypto.js'
 
 const router = useRouter()
@@ -105,7 +105,7 @@ onMounted(() => {
     if (savedUsername && savedPassword) {
         form.username = savedUsername
         try {
-            const bytes = CryptoJS.AES.decrypt(savedPassword, 'CKKSchool2025')
+            const bytes = CryptoJS.AES.decrypt(savedPassword, 'SatitCMUSchool2025')
             form.password = bytes.toString(CryptoJS.enc.Utf8)
         } catch (e) {
             form.password = ''
@@ -214,7 +214,7 @@ async function onSubmit() {
             }
             if (remember.value) {
                 localStorage.setItem('remember_username', form.username)
-                const encrypted = CryptoJS.AES.encrypt(form.password, 'CKKSchool2025').toString()
+                const encrypted = CryptoJS.AES.encrypt(form.password, 'SatitCMUSchool2025').toString()
                 localStorage.setItem('remember_password', encrypted)
             } else {
                 localStorage.removeItem('remember_username')
@@ -258,7 +258,7 @@ async function onSubmit() {
 
 <style scoped>
 .login-bg {
-    background: linear-gradient(135deg, #1e3a8a 60%, #ffd600 100%);
+    background: linear-gradient(135deg, #1e3a8a 58%, #ffffff 100%);
 }
 
 .school-logo {
@@ -284,8 +284,8 @@ async function onSubmit() {
 }
 
 .school-title {
-    color: #ffd600;
-    text-shadow: 1px 1px 0 #1e3a8a, 0 2px 8px #1e3a8a33;
+    color: #1e3a8a;
+    text-shadow: 0 1px 0 #ffffff, 0 2px 8px #1e3a8a22;
     letter-spacing: 1px;
 }
 
@@ -300,17 +300,27 @@ async function onSubmit() {
 }
 
 .btn-primary.login-btn {
-    background: linear-gradient(90deg, #1e3a8a 70%, #ffd600 100%);
+    background: linear-gradient(90deg, #1e3a8a 58%, #93c5fd 100%);
     color: #fff;
     border: none;
     transition: transform 0.18s cubic-bezier(.68, -0.55, .27, 1.55), box-shadow 0.18s;
-    box-shadow: 0 2px 8px #1e3a8a22;
+    box-shadow: 0 2px 8px #1e3a8a33;
 }
 
 .btn-primary.login-btn:hover:not(:disabled) {
     transform: scale(1.06);
-    box-shadow: 0 4px 16px #ffd60044;
-    background: linear-gradient(90deg, #1e3a8a 50%, #ffd600 100%);
+    box-shadow: 0 4px 16px #93c5fd66;
+    background: linear-gradient(90deg, #1d4ed8 45%, #dbeafe 100%);
+}
+
+.install-btn {
+    background: linear-gradient(135deg, #1e3a8a 35%, #bfdbfe 100%);
+    border: 1px solid #1e3a8a;
+    color: #ffffff;
+}
+
+.install-btn:hover {
+    background: linear-gradient(135deg, #1d4ed8 35%, #e0f2fe 100%);
 }
 
 .input,

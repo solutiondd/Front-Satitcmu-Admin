@@ -38,7 +38,7 @@
                                 <div @click="goToStudent(classroom.grade, classroom.classroom)">
                                     <div class="text-2xl font-bold text-primary mb-1">ห้อง {{ classroom.classroom }}
                                     </div>
-                                    <div class="text-xs text-secondary font-medium">{{ getGradeLabel(classroom.grade) }}
+                                    <div class="text-xs text-purple-600 font-medium">{{ getGradeLabel(classroom.grade) }}
                                     </div>
                                 </div>
                                 <div class="flex items-center justify-center mt-2">

@@ -15,7 +15,7 @@
                     <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                 </form>
                 <h3 class="font-bold text-lg mb-4">รายการเข้าเรียน{{ attendanceRole === 'teacher' ? 'ครู' : 'นักเรียน'
-                }} วันที่ {{ displayDate }}</h3>
+                    }} วันที่ {{ displayDate }}</h3>
                 <div v-if="attendanceRole === 'student'">
                     <Attendance :role="'student'" :date="selectedDate" v-if="residentRole !== 'teacher'" />
                     <Attendance :role="'student'" :date="selectedDate" v-else :fixed-grade="localGrade"
@@ -55,7 +55,7 @@
                     <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                 </form>
                 <h3 class="font-bold text-lg mb-4">รายการที่ไม่ได้สแกน{{ missedRole === 'teacher' ? 'ครู' : 'นักเรียน'
-                }} วันที่
+                    }} วันที่
                     {{ displayDate }}</h3>
 
                 <MissedTable :data="missedData" :pagination="missedPagination" :hide-export="true"
@@ -114,7 +114,7 @@
                 <div v-show="showTeacherStat" class="stats shadow bg-base-100">
                     <div class="stat group" ref="teacherStatRef">
                         <div class="stat-title">จำนวนครูทั้งหมด</div>
-                        <div class="stat-value text-secondary">{{ totals.total_teachers || 0 }}</div>
+                        <div class="stat-value text-purple-500">{{ totals.total_teachers || 0 }}</div>
                         <div class="stat-figure">
                             <div ref="teacherIconRef" class="w-20 h-20 transition-transform duration-200"></div>
                         </div>
@@ -125,7 +125,7 @@
                 <div v-show="showCombinedStat" class="stats shadow bg-base-100">
                     <div class="stat group" ref="combinedStatRef">
                         <div class="stat-title">ทั้งหมดที่เข้า</div>
-                        <div class="stat-value text-purple-500">{{ totalCombined }}</div>
+                        <div class="stat-value text-secondary">{{ totalCombined }}</div>
                         <div class="stat-desc">ประจำวันที่ {{ displayDate }}</div>
                         <div class="stat-figure">
                             <div ref="combinedIconRef" class="w-20 h-20 transition-transform duration-200"></div>
@@ -199,10 +199,10 @@
                         <div class="stats stats-vertical lg:stats-horizontal bg-base-100 w-full teacher-bg">
                             <div class="stat relative">
                                 <div class="stat-title">เข้า</div>
-                                <div class="stat-value text-secondary">{{ teacher.total - teacher.late }}</div>
+                                <div class="stat-value text-purple-500">{{ teacher.total - teacher.late }}</div>
                                 <div class="stat-desc absolute bottom-2 right-2">
                                     <button @click="showTeacherAttendanceTable"
-                                        class="btn btn-xs btn-secondary btn-plain">
+                                        class="btn btn-xs bg-purple-600 text-white border-0 hover:bg-purple-700">
                                         คลิก
                                     </button>
                                 </div>
@@ -1054,6 +1054,6 @@ onMounted(() => {
 }
 
 .teacher-bg {
-    background-color: #fff7d6 !important;
+    background-color: #faeeff !important;
 }
 </style>

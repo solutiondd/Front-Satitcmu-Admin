@@ -1,5 +1,5 @@
 {
-  "name": "front-CKK",
+  "name": "front-satitcmu",
   "private": true,
   "version": "2.0.0",
   "type": "module",
@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy:production": "scp -r -P 2222 dist/* solutiondd@49.231.182.46:/var/www/ckkadmin"
+    "deploy:production": "scp -r -P 2222 dist/* solutiondd@49.231.182.46:/var/www/satitcmuadmin"
   },
   "dependencies": {
     "@fawmi/vue-google-maps": "^0.9.79",
