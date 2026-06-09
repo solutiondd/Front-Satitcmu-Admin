@@ -33,6 +33,11 @@ jobs:
           VITE_IMG_PROFILE_URL=${{ secrets.VITE_IMG_PROFILE_URL }}
           EOF
 
+      - name: Verify env file
+        run: |
+          ls -la
+          cat .env
+
       - name: Build and push image
         uses: docker/build-push-action@v6
         with:
