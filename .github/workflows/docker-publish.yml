@@ -25,6 +25,13 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Create production env file
+        shell: bash
+        run: |
+          cat <<EOF > .env
+          ${{ secrets.ENV }}
+          EOF
+
       - name: Build and push image
         uses: docker/build-push-action@v6
         with:
