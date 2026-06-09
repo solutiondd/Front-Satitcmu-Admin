@@ -28,7 +28,10 @@ jobs:
       - name: Create production env file
         shell: bash
         run: |
-          printf '%s\n' "${{ secrets.ENV }}" > .env
+          cat <<EOF > .env
+          VITE_APP_BASE_URL=${{ secrets.VITE_APP_BASE_URL }}
+          VITE_IMG_PROFILE_URL=${{ secrets.VITE_IMG_PROFILE_URL }}
+          EOF
 
       - name: Build and push image
         uses: docker/build-push-action@v6
