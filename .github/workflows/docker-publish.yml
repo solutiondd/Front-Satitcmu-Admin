@@ -27,19 +27,14 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Create production env file
-        shell: bash
-        run: |
-          cat <<EOF > .env
-          VITE_APP_BASE_URL=${{ secrets.VITE_APP_BASE_URL }}
-          VITE_IMG_PROFILE_URL=${{ secrets.VITE_IMG_PROFILE_URL }}
-          EOF
-
       - name: Build and push image
         uses: docker/build-push-action@v6
         with:
           context: .
           push: true
+          build-args: |
+            VITE_APP_BASE_URL=${{ secrets.VITE_APP_BASE_URL }}
+            VITE_IMG_PROFILE_URL=${{ secrets.VITE_IMG_PROFILE_URL }}
           tags: |
             ${{ env.IMAGE_NAME }}:latest
             ${{ env.IMAGE_NAME }}:${{ github.sha }}
