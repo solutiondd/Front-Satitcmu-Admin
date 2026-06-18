@@ -32,8 +32,8 @@ export default {
 
   // ฟีเจอร์สำหรับเมนู
   menu: {
-    enableUniformInspection: true, // เมนูตรวจเครื่องแบบ
-    enableReportUniformInspection: true, // เมนูรายงานตรวจระเบียบ
-    enableAllowanceSetting: true, // เมนูตั้งค่าสาย
+    enableUniformInspection: false, // เมนูตรวจเครื่องแบบ
+    enableReportUniformInspection: false, // เมนูรายงานตรวจระเบียบ
+    enableAllowanceSetting: false, // เมนูตั้งค่าสาย
   },
 };
