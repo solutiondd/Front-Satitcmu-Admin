@@ -116,7 +116,7 @@
                         <input v-model="formData.rfid" type="text" class="input input-bordered w-full"
                             @input="validateRfid" autocomplete="off" />
                         <label v-if="rfidError" class="label"><span class="label-text-alt text-error">{{ rfidError
-                                }}</span></label>
+                        }}</span></label>
                     </div>
 
                     <div class="form-control w-full">
@@ -128,6 +128,15 @@
                             <option value="ปกติ">ปกติ</option>
                             <option value="พักงาน">พักงาน</option>
                         </select>
+                    </div>
+
+                    <div class="form-control w-full">
+                        <label class="label">
+                            <span class="label-text">รายละเอียดเพิ่มเติม <span
+                                    class="text-gray-500">(ไม่บังคับ)</span></span>
+                        </label>
+                        <input v-model="formData.note" type="text" class="input input-bordered w-full"
+                            autocomplete="off" />
                     </div>
 
                     <!-- <div class="form-control w-full">
@@ -185,6 +194,7 @@ const formData = ref({
     position: '',
     department: '',
     rfid: '',
+    note: '',
     status: '',
     picture: null
 })
@@ -216,6 +226,7 @@ const openModal = async (teacher) => {
         last_name: teacher.name.split(' ').slice(2).join(' ') || '',
         position: teacher.position,
         department: teacher.department,
+        note: teacher.note !== undefined && teacher.note !== null ? String(teacher.note) : '',
         status: 'ปกติ',
         picture: null,
         rfid: teacher.rfid !== undefined && teacher.rfid !== null ? String(teacher.rfid) : ''
@@ -264,6 +275,7 @@ const closeModal = () => {
         last_name: '',
         position: '',
         department: '',
+        note: '',
         status: '',
         picture: null
     }

@@ -30,6 +30,11 @@ export default {
     enableLineStatusFilter: false, // true = แสดงตัวกรองสถานะ LINE, false = ซ่อน
   },
 
+  // ฟีเจอร์สำหรับหน้าบุคลากร
+  teacher: {
+    enableApiNumberColumn: false, // true = แสดงคอลัมน์เลข API (note), false = ซ่อน
+  },
+
   // ฟีเจอร์สำหรับหน้า Home
   home: {
     enableProgress: false, // true = แสดง Progress, false = ซ่อน

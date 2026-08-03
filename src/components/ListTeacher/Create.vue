@@ -146,6 +146,15 @@
                             <option value="พักงาน">พักงาน</option>
                         </select>
                     </div>
+
+                    <div class="form-control w-full">
+                        <label class="label">
+                            <span class="label-text">รายละเอียดเพิ่มเติม <span
+                                    class="text-gray-500">(ไม่บังคับ)</span></span>
+                        </label>
+                        <input v-model="formData.note" type="text" class="input input-bordered w-full"
+                            autocomplete="off" />
+                    </div>
                 </div>
 
                 <div class="modal-action">
@@ -187,6 +196,7 @@ const formData = ref({
     first_name: '',
     last_name: '',
     rfid: '',
+    note: '',
     position: '',
     department: '',
     status: '',
@@ -297,6 +307,7 @@ const openModal = () => {
         first_name: '',
         last_name: '',
         rfid: '',
+        note: '',
         position: '',
         department: '',
         status: '',
@@ -322,6 +333,7 @@ const closeModal = () => {
         first_name: '',
         last_name: '',
         rfid: '',
+        note: '',
         position: '',
         department: '',
         status: '',
