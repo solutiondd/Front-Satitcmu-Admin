@@ -32,7 +32,7 @@ export default {
 
   // ฟีเจอร์สำหรับหน้าบุคลากร
   teacher: {
-    enableApiNumberColumn: false, // true = แสดงคอลัมน์เลข API (note), false = ซ่อน
+    enableApiNumberColumn: true, // true = แสดงคอลัมน์เลข API (note), false = ซ่อน
   },
 
   // ฟีเจอร์สำหรับหน้า Home
